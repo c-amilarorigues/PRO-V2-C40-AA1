@@ -56,10 +56,10 @@ class Game {
       { x: width / 2 - 180, y: height - 5500, image: obstacle2Image }
     ];
 
-    // Adding fuel sprite in the game
+    // Adicionar sprite de combustível no jogo
     this.addSprites(fuels, 4, fuelImage, 0.02);
 
-    // Adding coin sprite in the game
+    // Adicionar sprite de moeda no jogo
     this.addSprites(powerCoins, 18, powerCoinImage, 0.09);
   }
 
@@ -113,13 +113,13 @@ class Game {
 
       this.showLeaderboard();
 
-      //index of the array
+      //índice da matriz
       var index = 0;
       for (var plr in allPlayers) {
-        //add 1 to the index for every loop
+        //adicione 1 ao índice para cada loop
         index = index + 1;
 
-        //use data form the database to display the cars in x and y direction
+        //use os dados do banco de dados para exibir os carros nas direções x e y
         var x = allPlayers[plr].positionX;
         var y = height - allPlayers[plr].positionY;
 
@@ -131,12 +131,12 @@ class Game {
           fill("red");
           ellipse(x, y, 60, 60);
 
-          // Changing camera position in y direction
+          //alterar a posição da câmera na direção y
           camera.position.y = cars[index - 1].position.y;
         }
       }
 
-      // handling keyboard events
+      //manipulando eventos de teclado
       this.handlePlayerControls();
 
       drawSprites();
@@ -161,7 +161,7 @@ class Game {
       (players[0].rank === 0 && players[1].rank === 0) ||
       players[0].rank === 1
     ) {
-      // &emsp;    This tag is used for displaying four spaces.
+      // &emsp;    Essa etiqueta é usada para exibir quatro espaços.
       leader1 =
         players[0].rank +
         "&emsp;" +
